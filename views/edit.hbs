@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+    <title>{{title}} Book | Vook</title>
+    <style>
+        .add-book-form{
+            margin:50px auto;
+            
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">Vook</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav mr-auto">
+        {{!-- <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+        </li> --}}
+        </ul>
+        <div class="my-2 my-lg-0">
+        Hi, {{username}}
+        <a class="btn" href="/logout">LOGOUT</a>
+        </div>
+    </div>
+    </nav>
+    <div class="container" id="previous-uploads" >
+        <div class="row">
+            <div class="add-book-form">
+                <h2 class="text-center">UPDATE BOOK</h2>
+                <br/>
+                <form method="POST" id="book-upload-form">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>ISBN</label>
+                                <input class="form-control" type="text" value={{isbn}} name="isbn" placeholder="ISBN" id="isbn"/>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                             <div class="form-group">
+                                <label>BOOK TITLE</label>
+                                <input class="form-control" type="text" value={{title}} name="title" placeholder="Title" id="title"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>AUTHOR NAME</label>
+                                <input class="form-control" type="text" value={{author}} name="author" placeholder="Author" id="author"/>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>PUBLISHER</label>
+                                <input class="form-control" type="text" value={{publisher}} name="publisher" placeholder="Publisher" id="publisher"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>CLASS</label>
+                                <select class="form-control" name="class" id="class">
+                                    <option value="">-SELECT-CLASS--</option>
+                                    <option value="9">Class 9</option>
+                                    <option value="10">Class 10</option>
+                                    <option value="11">Class 11</option>
+                                    <option value="12">Class 12</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>SUBJECT</label>
+                                <select class="form-control" name="subject" id="subject">
+                                    <option value="">-SELECT-SUBJECT--</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>CATEGORY</label>
+                                <select class="form-control" name="category" id="category">
+                                    <option value="">-SELECT-CATEGORY--</option>
+                                    <option value="9">NCERT</option>
+                                    <option value="10">Refresher</option>
+                                    <option value="11">Sample Paper</option>
+                                    <option value="12">Competitive Exam</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>EDITION</label>
+                                <select class="form-control" name="edition" id="edition">
+                                    <option value="">-SELECT-EDITION--</option>
+                                    <option value="2019">2019</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2017">2017</option>
+                                    <option value="2016">2016</option>
+                                    <option value="2015">2015</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>BOOK DETAIL</label>
+                                <textarea name="detail" placeholder="Detail" class="form-control" id="detail">{{detail}}</textarea>
+                                
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>BOOK DESCRIPTION</label>
+                                <textarea name="description" placeholder="Type book description" class="form-control" id="description">{{description}}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>MRP</label>
+                                <input class="form-control" type="number" name="mrp" value={{mrp}} placeholder="MRP" id="mrp"/>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>DISCOUNT</label>
+                                <input class="form-control" type="number" name="discount" value={{discount}} placeholder="Discount" id="discount"/>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>TAGS</label>
+                                <input class="form-control" type="text" name="tags" value={{tags}} placeholder="Type tags" id="tags"/>
+                                
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label>UPLOAD IMAGE</label>
+                            <input type="file" class="form-control" id="image" value={{image}}>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="status text-center" id="status" style="font-weight:bold"></div>
+                    <br/>
+                    <div class="row">
+                        
+                        <input type="submit" class="btn btn-primary btn-block" value="SAVE">
+                        <input type="hidden" id = "id" name="id" value={{id}}>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" type="text/javascript"></script>
+    <script>
+        $(document).ready(function(){
+
+            $('#class').on('change',function(e){
+                var c = e.target.value;
+                if(c==9){
+                    var subjects = ['Hindi','English','Maths','Science','History','Geography','Economics','Political Science']
+                    $.each(subjects, function(key, value) {   
+                        $('#subject').append($("<option></option>").attr("value",value).text(value)); 
+                    });
+                }else if(c==10){
+                    var subjects = ['Hindi','English','Maths','Science','History','Geography','Economics','Political Science']
+                    $.each(subjects, function(key, value) {   
+                        $('#subject').append($("<option></option>").attr("value",value).text(value)); 
+                    });
+                }else if(c==11){
+                    var subjects = ['Physics','Chemistry','Maths','English','Biology','Computer','Physical Education','Economics','Accounts','Business']
+                    $.each(subjects, function(key, value) {   
+                        $('#subject').append($("<option></option>").attr("value",value).text(value)); 
+                    });
+                }else if(c==12){
+                    var subjects = ['Physics','Chemistry','Maths','English','Biology','Computer','Physical Education','Economics','Accounts','Business']
+                    $.each(subjects, function(key, value) {   
+                        $('#subject').append($("<option></option>").attr("value",value).text(value)); 
+                    });
+                }
+            });
+
+            $('#book-upload-form').on('submit',function(e){
+                e.preventDefault();
+                $(".form-control").css('border','0 solid #ced4da');
+                var data = $(this).serialize();
+                var bookId = $('#id').val();
+                axios({
+                    url : '/edit?id='+bookId,
+                    data : data,
+                    method : 'PUT',
+                })
+                .then(res=>{
+                    if(res.data.title){
+                        $('#title').css('border','1px solid #d9534f');
+                    }
+                    if(res.data.isbn){
+                        $('#isbn').css('border','1px solid #d9534f');
+                    }
+                    if(res.data.author){
+                        $('#author').css('border','1px solid #d9534f');
+                    }
+                    if(res.data.publisher){
+                        $('#publisher').css('border','1px solid #d9534f');
+                    }
+                    if(res.data.class){
+                        $('#class').css('border','1px solid #d9534f');
+                    }
+                    if(res.data.subject){
+                        $('#subject').css('border','1px solid #d9534f');
+                    }
+                    if(res.data.category){
+                        $('#category').css('border','1px solid #d9534f');
+                    }
+                    if(res.data.edition){
+                        $('#edition').css('border','1px solid #d9534f');
+                    }
+                    if(res.data.detail){
+                        $('#detail').css('border','1px solid #d9534f');
+                    }
+                    if(res.data.description){
+                        $('#description').css('border','1px solid #d9534f');
+                    }
+                    if(res.data.mrp){
+                        $('#mrp').css('border','1px solid #d9534f');
+                    }
+                    if(res.data.discount){
+                        $('#discount').css('border','1px solid #d9534f');
+                    }
+                    if(res.data.tags){
+                        $('#tags').css('border','1px solid #d9534f');
+                    }
+                    if(res.data.image){
+                        $('#image').css('border','1px solid #d9534f');
+                    }
+                    if(res.data.success){
+                        $('#status').html(res.data.message);
+                        $('#status').css('color','#4BBF73');
+                        $('#book-upload-form')[0].reset();
+                        $('#status').fadeOut(3000);
+                        window.location.href = 'http://localhost:3000';
+                    }
+                }).catch(err=>{
+                    console.log(err);
+                })
+            })
+
+            
+
+
+        });
+
+        
+    </script>
+    
+    <script src="main.js" type="text/javascript"></script>
+</body>
+</html>
