@@ -102,15 +102,15 @@ app.get('/login',(req,res)=>{
 app.post('/login',(req,res)=>{
     var username = req.body.username;
     var password = req.body.password;
-    console.log(username + " "+ password);
     
-    if(username!=='akumar' && password!=='anil@123'){
-        res.json({message : 'Incorrect username or password!!'});
-    }else if(username!=='agupta' && password!=='Arun#$34'){
-        res.json({message : 'Incorrect username or password!!'});
-    }else{
+     if(username==='akumar' && password==='anil@123'){
         req.session.key = username;
         res.json({success : true});
+    }else if(username==='agupta' && password==='arun@456'){
+        req.session.key = username;
+        res.json({success : true});
+    }else{
+        res.json({message : 'Incorrect username or password!!'});
     }
 
     
