@@ -74,7 +74,7 @@ app.get('/add',(req,res)=>{
 
 app.get('/',(req,res)=>{
     if(req.session.key){
-        Book.find({uploader:req.session.key})
+        Book.find({uploader:req.session.key}).sort({date:-1})
         .then(books=>{
             res.render('index.hbs',{
                 title : 'Dashboard | Vook',
