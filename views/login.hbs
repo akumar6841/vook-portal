@@ -54,7 +54,7 @@
             })
             .then(res=>{
                 if(res.data.success){
-                    window.location.href = 'http://localhost:3000';
+                    window.location.href = 'https://vook-portal.herokuapp.com/';
                 }else{
                     $('#status').html(res.data.message);
                 }
