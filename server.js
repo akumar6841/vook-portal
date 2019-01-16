@@ -8,7 +8,7 @@ const cors = require('cors');
 // const cookieParser = require('cookie-parser');
 var cookieSession = require('cookie-session');
 const app = express();
-const port  = process.env || 3000;
+var port  = process.env.PORT || 3000;
 
 //IMPORT VALIDATION
 const validateBookInput = require('./validations/book');
