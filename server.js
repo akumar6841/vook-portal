@@ -104,7 +104,7 @@ app.post('/login',(req,res)=>{
     var password = req.body.password;
     
     
-    if(username!=='akumar' && password!=='Anil#$12'){
+    if(username!=='akumar' && password!=='anil@123'){
         res.json({message : 'Incorrect username or password!!'});
     }else if(username!=='agupta' && password!=='Arun#$34'){
         res.json({message : 'Incorrect username or password!!'});
