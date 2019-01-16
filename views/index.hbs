@@ -56,7 +56,8 @@
                         <th>Action</th>
                     </thead>
                     <tbody id="table-body">
-                        {{#each books}}
+                        {{#if books}}
+                            {{#each books}}
                             <tr>
                                 <td><img src="{{this.image}}" title="{{this.title}} image" width="55px" height="70px"></td>
                                 <td>{{this.title}}</td>
@@ -64,15 +65,15 @@
                                 <td>{{this.publisher}}</td>
                                 <td>{{this.mrp}}</td>
                                 <td>{{this.discount}}</td>
-                                <td>
-
-                                    <a class="btn" href="/edit?id={{this.id}}">EDIT</a>
-                                    {{!-- <a class="btn" href="/edit?id={{this.id}}">DELETE</a> --}}
-                                    
-                                </td>
+                                <td><a class="btn" href="/edit?id={{this.id}}">EDIT</a></td>
                                 
                             </tr>
-                        {{/each}}
+                            {{/each}}
+                            {{else}}
+                                <tr>
+                                    <td>You added no book yet!!<td>
+                                </tr>
+                            {{/if}}
                     </tbody>
                 </table>
             </div>
