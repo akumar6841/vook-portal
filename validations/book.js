@@ -19,8 +19,8 @@ module.exports = function(data){
 
     
     //VALIDATE ISBN NUMBER OF DIGITS
-    if(!validator.isLength(data.isbn,{min : 10, max : 10})){
-        errors.isbn = 'ISBN must be 10-digits only';
+    if(!validator.isLength(data.isbn,{min : 10, max : 13})){
+        errors.isbn = 'ISBN must be 10-digits or 13-digits only';
     }
 
     //VALIDATE BOOK ISBN
