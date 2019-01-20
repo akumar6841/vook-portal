@@ -12,7 +12,7 @@ module.exports = function(data){
     data.class = !isEmpty(data.class) ? data.class : '';
     data.subject = !isEmpty(data.subject) ? data.subject : '';
     data.category = !isEmpty(data.category) ? data.category : '';
-    data.image = !isEmpty(data.image) ? data.image : '';
+   
     data.mrp = !isEmpty(data.mrp) ? data.mrp : '';
     data.discount = !isEmpty(data.discount) ? data.discount : '';
     data.tags = !isEmpty(data.tags) ? data.tags : '';
@@ -63,10 +63,7 @@ module.exports = function(data){
     }
 
 
-    //VALIDATE IMAGE ADDRESS
-    if(validator.isEmpty(data.image)){
-        errors.image = 'Book Image address is required';
-    }
+  
 
     //VALIDATE EDITION
     if(validator.isEmpty(data.edition)){
